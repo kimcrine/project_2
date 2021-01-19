@@ -4,4 +4,4 @@ FOR THE GAME. FOR THE WORLD.
 
 ![robert lewandowski](https://media1.tenor.com/images/2a697daa532048497f4e2d6b96dc463b/tenor.gif)
 
-Welcome to the one-stop site for all your FIFA stats! 
+Welcome to the one-stop site for all your FIFA stats!
