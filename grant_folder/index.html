@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Top 10 Countries Comparison</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+      <!-- <button onclick="update(datasetOverall)">Overall</button>
+      <button onclick="update(datasetPace)">Pace</button>
+      <button onclick="update(datasetDribbling)">Dribbling</button>
+      <button onclick="update(datasetShooting)">Shooting</button>
+      <button onclick="update(datasetPassing)">Passing</button>
+      <button onclick="update(datasetDefending)">Defending</button>
+      <button onclick="update(datasetPhysical)">Physical</button>
+      <button onclick="update(datasetGoalkeeping)">Goalkeeping</button> -->
+        <label><input type="radio" name="dataset" id="dataset" value="Overall" checked> Overall</label>
+        <label><input type="radio" name="dataset" id="dataset" value="Pace"> Pace</label>
+        <label><input type="radio" name="dataset" id="dataset" value="Dribbling"> Dribbling</label>
+        <label><input type="radio" name="dataset" id="dataset" value="Shooting"> Shooting</label>
+        <label><input type="radio" name="dataset" id="dataset" value="Passing"> Passing</label>
+        <label><input type="radio" name="dataset" id="dataset" value="Defending"> Defending</label>
+        <label><input type="radio" name="dataset" id="dataset" value="Physical"> Physical</label>
+        <label><input type="radio" name="dataset" id="dataset" value="Goalkeeping"> Goalkeeping</label>
+    </form>
+    <!-- Create a div where the graph will take place -->
+    <div id="top10"></div>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
