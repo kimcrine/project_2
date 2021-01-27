@@ -1,3 +1,4 @@
+// Create datasets
 datasetOverall = [
     {label:"Belgium", value:68.24},
     {label:"France", value:67.85},
@@ -102,32 +103,41 @@ datasetGoalkeeping =  [
      {label:"Italy", value:62.42} 
 ];          
 
+// Set the margins of the chart
 var margin = {top: (parseInt(d3.select('body').style('height'), 10)/20), right: (parseInt(d3.select('body').style('width'), 10)/20), bottom: (parseInt(d3.select('body').style('height'), 10)/20), left: (parseInt(d3.select('body').style('width'), 10)/5)},
         width = parseInt(d3.select('body').style('width'), 10) - margin.left - margin.right,
         height = parseInt(d3.select('body').style('height'), 10) - margin.top - margin.bottom;
 
+// Append the tooltip to the index
 var div = d3.select("body").append("div").attr("class", "toolTip");
 
+// Set the Y scale
 var y = d3.scale.ordinal()
         .rangeRoundBands([height, 0], .2, 0.5);
 
+// Set the X scale
 var x = d3.scale.linear()
         .domain([48, 74])
         .range([0, width]);
 
+// Set the colors based on the country label
 var colorColumn = "label";
 
+// Color scale to have each bar a different color
 var colorScale = d3.scale.category10();
 
+// Setting the X Axis
 var xAxis = d3.svg.axis()
         .scale(x)
         .tickSize(-height)
         .orient("bottom");
 
+// Setting the Y axis
 var yAxis = d3.svg.axis()
         .scale(y)
         .orient("left");
 
+// Set the svg element
 var svg = d3.select("body").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -135,14 +145,17 @@ var svg = d3.select("body").append("svg")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
         .attr("class", "graph-svg-component");
 
+// Call the X Axis
 svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis);
 
+// Set it for overall to be checked on load
 d3.select("input[value=\"Overall\"]").property("checked", true);
 change(datasetOverall);
 
+// Function to load new data when new category is checked
 d3.selectAll("input").on("change", selectDataset);
 
 function change(dataset) {
@@ -174,7 +187,8 @@ function change(dataset) {
 
     var bar = svg.selectAll(".bar")
             .data(dataset, function(d) {return d.label; });
-    // new data:
+
+    // New data:
     bar.enter().append("rect")
             .attr("class", "bar")
             .attr("x", function(d) {return x(d.value); })
@@ -195,10 +209,10 @@ function change(dataset) {
                 div.style("display", "none");
             });
 
-    // removed data:
+    // Remove data:
     bar.exit().remove();
 
-    // updated data:
+    // Update data:
     bar.transition()
             .duration(1000)
             .attr("x", function(d) {return 0; })
@@ -209,6 +223,7 @@ function change(dataset) {
 
 }      
 
+// If/else function for choosing different categories 
 function selectDataset()
 {
     var value = this.value;

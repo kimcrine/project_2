@@ -9,7 +9,7 @@ svg {
     width: 100%;
     height: 100%;
     position: center;
-    background-color: rgb(235, 242, 245);
+    /* background-color: rgb(235, 242, 245); */
     fill-opacity: .75;
 }
 
