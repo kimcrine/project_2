@@ -9,7 +9,7 @@
                     var player = d.name;
                     playerMap[player] = [];
 
-                    // { cerealName: [ bar1Val, bar2Val, ... ] }
+                    // { playerName: [ bar1Val, bar2Val, ... ] }
                     playerAttributes.forEach(function(attribute) {
                         playerMap[player].push( +d[attribute]);
                     });
@@ -100,7 +100,7 @@
                     updateBars(newData);
                 };
 
-                // Get names of cereals, for dropdown
+                // Get names of players, for dropdown
                 var players = Object.keys(playerMap).sort();
 
                 var dropdown = d3.select("#vis-container")
