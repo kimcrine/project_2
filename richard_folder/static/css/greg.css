@@ -1,13 +1,13 @@
 .chart::before {
   position: absolute;
-  top: 120px;
-  left: 110px;
+  top: 208px;
+  left: 100px;
   z-index: -1;
   display: block;
   width: 800px;
   height: 470px;
   content: " ";
-  /* background-image: url("../images/maxresdefault.jpg"); */
+  background-image: url("../images/maxresdefault.jpg");
   background-repeat: no-repeat;
   background-position: 50% 30;
   background-size: cover;

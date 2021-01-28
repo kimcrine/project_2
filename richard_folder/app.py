@@ -24,8 +24,8 @@ def index():
 
 @app.route("/about")
 def about():
-    nam = ["Cory", "Kim", "Grant", "Greg", "Jessica", "Richard"]
-    return render_template("about.html", nam=nam)
+    
+    return render_template("about.html")
 
 
 @app.route("/data", methods=["GET", "POST"])
@@ -94,6 +94,10 @@ def jess_func():
 @app.route("/grant")
 def grant_func():
     return render_template("grant.html")
+
+@app.route("/cory")
+def cory_func():
+    return render_template("cory.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
